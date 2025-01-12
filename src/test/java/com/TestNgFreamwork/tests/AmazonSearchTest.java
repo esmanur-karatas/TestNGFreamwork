@@ -17,8 +17,10 @@ public class AmazonSearchTest {
     @Test
     public void testSearch() {
         Driver.getDriver().get(url);
-        page.searchBox.sendKeys("Kulaklık");
-
+        //burda kullandığımız bu sendkeys i page sayfasında da method olarak kullanıp burada sadece çağırabiliriz.
+        //page.searchBox.sendKeys("Kulaklık");
+        //örnek olarak:
+        page.setSearchBox("Kulaklık");
         Driver.closeDriver();
     }
 }

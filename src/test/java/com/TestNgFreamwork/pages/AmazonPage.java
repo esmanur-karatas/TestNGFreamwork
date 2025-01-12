@@ -1,6 +1,7 @@
 package com.TestNgFreamwork.pages;
 
 import com.TestNgFreamwork.utilities.Driver;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,5 +18,9 @@ public class AmazonPage {
 
     @FindBy(id = "twotabsearchtextbox")
     public WebElement searchBox;
+
+   public void setSearchBox(String search) {
+       searchBox.sendKeys();
+   }
 
 }
