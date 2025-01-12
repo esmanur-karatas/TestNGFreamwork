@@ -3,6 +3,7 @@ package com.TestNgFreamwork.utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -42,6 +43,13 @@ public class Driver {
                 case "safari":
                     WebDriverManager.getInstance(SafariDriver.class).setup();
                     driver = new SafariDriver();
+                    break;
+
+                case "edge":
+                    WebDriverManager.edgedriver().setup();
+                    driver = new EdgeDriver();
+                    driver.manage().window().maximize();
+                    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
                     break;
             }
 
