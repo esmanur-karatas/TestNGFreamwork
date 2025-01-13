@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class AmazonPage {
 
     //burada genel bir amazon sayfası oluşturduk ama bunu aslında atıyorum amazon login ya da amazon header
@@ -19,8 +21,24 @@ public class AmazonPage {
     @FindBy(id = "twotabsearchtextbox")
     public WebElement searchBox;
 
+    //bu şekilde burdada bu yapıyı tanımlayarak test sayfasında kullanabiliriz.
    public void setSearchBox(String search) {
-       searchBox.sendKeys();
+       searchBox.sendKeys(search, Keys.ENTER);
+
+
    }
+
+   @FindBy (id = "searchDropdownBox")
+    public WebElement searchDropdownBoxList;
+
+    @FindBy(id = "sp-cc-rejectall-link")
+    public WebElement cookie;
+
+    @FindBy (className = "a-price-whole")
+    public List<WebElement> priceList;
+
+    @FindBy(css = ".a-section.a-spacing-none.a-spacing-top-micro .a-row.a-size-small")
+    public List<WebElement> allReviews;
+
 
 }
