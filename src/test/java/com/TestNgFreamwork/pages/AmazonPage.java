@@ -37,8 +37,13 @@ public class AmazonPage {
     @FindBy (className = "a-price-whole")
     public List<WebElement> priceList;
 
-    @FindBy(css = ".a-section.a-spacing-none.a-spacing-top-micro .a-row.a-size-small")
-    public List<WebElement> allReviews;
+    //@FindBy(css = ".a-section.a-spacing-none.a-spacing-top-micro .a-row.a-size-small")
+    //public WebElement allReviews;
 
 
+    //@FindBy(xpath = "//a[@class='a-popover-trigger a-declarative']")
+    //public WebElement allPoint;
+
+    @FindBy (css = "[data-component-type=\"s-search-result\"]")
+    public List<WebElement> allProducts;
 }
